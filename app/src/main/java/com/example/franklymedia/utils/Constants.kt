@@ -25,6 +25,8 @@ const val TABLE_RANDOM_DOGS = "TABLE_RANDOM_DOGS"
  */
 const val WIDTH_PERCENTAGE_75: Double = 0.75
 
+const val SPLASH_SCREEN_DELAY_MILLI_SEC: Long = 1000
+
 fun isNetworkAvailable(mContext: Context): Boolean {
     return try {
         val connectivityManager: ConnectivityManager = mContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager

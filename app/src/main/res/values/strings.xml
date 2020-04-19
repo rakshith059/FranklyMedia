@@ -6,4 +6,6 @@
     <string name="recent_dogs_text">My Recently Generated Dogs!</string>
     <string name="clear_dogs_text">Clear Dogs!</string>
     <string name="not_viewed_any_dogs">Not viewed any dogs!!</string>
+
+    <string name="err_no_internet">No internet available, Please connect to internet and try again.</string>
 </resources>

@@ -7,9 +7,10 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.franklymedia.R
 import com.example.franklymedia.utils.AnimStyleEnum
 import com.example.franklymedia.utils.IFragmentCallBack
+import io.reactivex.disposables.CompositeDisposable
 
 abstract class BaseActivity : AppCompatActivity(), IFragmentCallBack {
-
+    var mCompositeDisposable = CompositeDisposable()
     var mActivity: AppCompatActivity? = null
     var mFragment: Fragment? = null
 
@@ -132,5 +133,10 @@ abstract class BaseActivity : AppCompatActivity(), IFragmentCallBack {
         } else {
             super.onBackPressed()
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mCompositeDisposable.dispose()
     }
 }
