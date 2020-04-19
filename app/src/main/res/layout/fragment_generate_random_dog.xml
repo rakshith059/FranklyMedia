@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:fillViewport="true">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/size_16dp"
+        android:orientation="vertical">
+
+        <include layout="@layout/custom_tool_bar" />
+
+        <ProgressBar
+            android:id="@+id/fragment_generate_random_dog_pb_progress"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminateOnly="true"
+            android:scaleY="2"
+            android:visibility="gone" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/fragment_generate_random_dog_iv_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_8dp"
+            android:minHeight="@dimen/size_300dp"
+            app:actualImageScaleType="fitCenter"
+            app:failureImage="@drawable/frankly_media"
+            app:placeholderImage="@drawable/frankly_media" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/fragment_generate_random_dog_btn_generate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/size_8dp"
+            android:background="@color/button_color"
+            android:padding="@dimen/size_8dp"
+            android:text="@string/generate_text"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_22sp"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</ScrollView>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">FranklyMedia</string>
+    <string name="generate_text">Generate</string>
+    <string name="random_dog_generator_text">Random Dog Generator!</string>
+    <string name="generate_dogs_text">Generate Dogs!</string>
+    <string name="recent_dogs_text">My Recently Generated Dogs!</string>
+    <string name="clear_dogs_text">Clear Dogs!</string>
+    <string name="not_viewed_any_dogs">Not viewed any dogs!!</string>
+</resources>
