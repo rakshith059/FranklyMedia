@@ -10,9 +10,11 @@ import com.example.franklymedia.R
 import com.example.franklymedia.database.entity.RandomDogEntity
 import com.example.franklymedia.models.RandomDogModel
 import com.example.franklymedia.utils.DebounceHandler
+import com.example.franklymedia.utils.isNetworkAvailable
 import com.example.franklymedia.utils.logdExt
 import com.example.franklymedia.viewmodels.LiveDataWrapper
 import com.example.franklymedia.viewmodels.RandomDogViewModel
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_generate_random_dog.*
 
 class GenerateRandomDogFragment : BaseFragment() {
@@ -35,7 +37,11 @@ class GenerateRandomDogFragment : BaseFragment() {
          */
         fragment_generate_random_dog_btn_generate.setOnClickListener {
             DebounceHandler.handle(Runnable {
-                randomDogViewModel?.getRandomDog()
+                if (isNetworkAvailable(this.context!!)) {
+                    randomDogViewModel?.getRandomDog()
+                } else {
+                    Snackbar.make(fragment_generate_random_dog_ll_main_container, resources.getString(R.string.err_no_internet), Snackbar.LENGTH_LONG).show()
+                }
 
                 fragment_generate_random_dog_pb_progress.visibility = View.VISIBLE
             })
